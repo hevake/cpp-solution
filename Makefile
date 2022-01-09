@@ -1,10 +1,9 @@
-
 export TOP_DIR := $(PWD)
 export APPS_DIR := $(PWD)/apps
 
 include config.mk
 
-export PLATFORM_DIR := platforms/$(PLATFORM)
+export PLATFORM_DIR := $(TOP_DIR)/platforms/$(PLATFORM)
 export STAGING_DIR := $(PLATFORM_DIR)/staging_files
 export INSTALL_DIR := $(PLATFORM_DIR)/install_files
 
@@ -16,9 +15,11 @@ targets += apps
 .PHONY: all test clean distclean $(appy_y)
 
 all:
-	./$(PLATFORM_DIR)/build_tools/pre_build.sh
-	cd $(STAGING_DIR) && rm -rf *;
-	cd $(INSTALL_DIR) && rm -rf * && mkdir -p install lib bin;
+	$(PLATFORM_DIR)/build_tools/pre_build.sh
+	rm -rf $(STAGING_DIR) $(INSTALL_DIR)
+	mkdir -p $(STAGING_DIR) $(INSTALL_DIR)
+	cd $(STAGING_DIR) && mkdir -p include lib bin;
+	cd $(INSTALL_DIR) && mkdir -p include lib bin;
 	@for t in $(targets); do \
 		[ ! -d $$t ] || $(MAKE) -C $$t $@ || exit $$? ;\
 	done
