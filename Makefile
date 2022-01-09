@@ -20,7 +20,7 @@ prepare:
 $(targets): prepare
 	$(MAKE) -C $@
 
-test: prepare
+test: $(targets)
 	@for i in $(targets); do \
 		[ ! -d $$i ] || $(MAKE) -C $$i $@ || exit $$? ; \
 	done
