@@ -1,4 +1,4 @@
-apps += base event eventx
+apps += base event eventx util
 apps += network
 apps += main
 
