@@ -9,15 +9,15 @@ export INSTALL_DIR := $(PLATFORM_DIR)/install_files
 
 export STAGING_INCLUDE := $(STAGING_DIR)/include
 export STAGING_LIB := $(STAGING_DIR)/lib
-
 export CONSTANT_INCLUDE := $(CONSTANT_DIR)/include
 export CONSTANT_LIB := $(CONSTANT_DIR)/lib
 
-CCFLAGS := -I$(STAGING_INCLUDE) -I$(CONSTANT_INCLUDE)
+INCLUDE_FLAGS := -I$(STAGING_INCLUDE) -I$(CONSTANT_INCLUDE)
+LINK_FLAGS := -L$(STAGING_LIB) -L$(CONSTANT_LIB)
 
-export CFLAGS := $(CCFLAGS) -std=c99
-export CXXFLAGS := $(CCFLAGS) -std=c++11
-export LDFLAGS := -L$(STAGING_LIB) -L$(CONSTANT_DIR)
+export CFLAGS := $(INCLUDE_FLAGS) -std=c99
+export CXXFLAGS := $(INCLUDE_FLAGS) -std=c++11
+export LDFLAGS := $(LINK_FLAGS)
 export DESTDIR := $(STAGING_DIR)
 export prefix := $(STAGING_DIR)
 
