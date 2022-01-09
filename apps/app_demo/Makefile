@@ -1,4 +1,4 @@
-.PHONY : prepare all clean distclean
+.PHONY : prepare all clean distclean test
 
 TARGET := app_demo
 OBJECTS := main.o build_time.o
@@ -33,6 +33,9 @@ all : prepare print_vars $(TARGET)
 $(TARGET): $(OBJECTS)
 	@echo "\033[35mBUILD $@\033[0m"
 	@$(CXX) -o $@ $^ $(LDFLAGS)
+
+test:
+	@echo "nothing todo"
 
 clean:
 	rm -rf $(OBJECTS)
