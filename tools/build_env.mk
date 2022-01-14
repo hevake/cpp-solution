@@ -5,7 +5,9 @@ include $(PLATFORM_DIR)/tools/build_env.mk
 
 export DESTDIR ?= $(STAGING_DIR)
 export prefix ?= $(STAGING_DIR)
-export TOOLCHAIN_BIN_PREFIX
+export TOOLCHAIN_BIN_PREFIX ?=
+
+export CONFIGURE_HELPER ?=$(TOP_DIR)/tools/configure_helper.sh
 
 export CONSTANT_DIR ?= $(PLATFORM_DIR)/constant_files
 export STAGING_DIR ?= $(PLATFORM_DIR)/staging_files
@@ -15,6 +17,8 @@ export STAGING_INCLUDE := $(STAGING_DIR)/include
 export STAGING_LIB := $(STAGING_DIR)/lib
 export CONSTANT_INCLUDE := $(CONSTANT_DIR)/include
 export CONSTANT_LIB := $(CONSTANT_DIR)/lib
+
+export OUTPUT_DIR := $(PLATFORM_DIR)/output_files
 
 INCLUDE_FLAGS := -I$(STAGING_INCLUDE) -I$(CONSTANT_INCLUDE)
 LINK_FLAGS := -L$(STAGING_LIB) -L$(CONSTANT_LIB)

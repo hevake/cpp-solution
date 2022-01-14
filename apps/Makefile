@@ -1,7 +1,7 @@
 apps += base event eventx util
 apps += network
 apps += main
-apps += app_demo
+apps += sample
 
 all test clean distclean:
 	@for i in $(apps); do \

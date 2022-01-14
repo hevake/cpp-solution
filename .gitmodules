@@ -1,3 +1,6 @@
 [submodule "apps/cpp_tbox"]
 	path = apps/cpp_tbox
 	url = git@gitee.com:cpp-master/cpp-tbox.git
+[submodule "third_party/libevent/src"]
+	path = third_party/libevent/src
+	url = https://github.com/libevent/libevent.git
