@@ -9,6 +9,7 @@ targets += apps
 .PHONY: all test clean distclean $(targets)
 
 all: $(targets)
+	./tools/make_install.sh
 
 $(targets):
 	$(MAKE) -C $@
