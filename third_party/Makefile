@@ -1,4 +1,5 @@
 targets += libevent
+targets += nlohmann
 
 all test clean distclean:
 	@for i in $(targets); do \
