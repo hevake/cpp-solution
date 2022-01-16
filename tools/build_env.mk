@@ -7,7 +7,8 @@ export DESTDIR ?= $(STAGING_DIR)
 #export prefix ?= $(STAGING_DIR)
 export TOOLCHAIN_BIN_PREFIX ?=
 
-export CONFIGURE_HELPER ?=$(TOP_DIR)/tools/configure_helper.sh
+export CONFIGURE_HELPER ?= $(TOP_DIR)/tools/configure_helper.sh
+export MAKE_PATCH ?= $(TOP_DIR)/tools/make_patch.sh
 
 export CONSTANT_DIR ?= $(PLATFORM_DIR)/constant_files
 export STAGING_DIR ?= $(PLATFORM_DIR)/staging_files
