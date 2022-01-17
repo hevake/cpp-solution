@@ -13,4 +13,5 @@ CLDFLAGS="-L$STAGING_LIB -L$CONSTANT_LIB"
     CPPFLAGS="$CCFLAGS" \
     LDFLAGS="$CLDFLAGS" \
     BUILD_CC="$CC" \
-    --host=arm-linux $*
+    --host=${CONFIGURE_HOST} \
+    $*

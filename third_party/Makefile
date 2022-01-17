@@ -1,3 +1,9 @@
+# DESTDIR, prefix, PREFIX 三个参数影响第三方的构建输出
+# 如非必要，请勿改动
+export DESTDIR ?= $(STAGING_DIR)
+export prefix ?=
+export PREFIX ?=
+
 targets += libevent
 targets += nlohmann
 targets += cJSON

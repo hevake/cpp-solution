@@ -3,8 +3,6 @@ export PLATFORM_DIR := $(TOP_DIR)/platforms/$(PLATFORM)
 
 include $(PLATFORM_DIR)/tools/build_env.mk
 
-export DESTDIR ?= $(STAGING_DIR)
-#export prefix ?= $(STAGING_DIR)
 export TOOLCHAIN_BIN_PREFIX ?=
 
 export CONFIGURE_HELPER ?= $(TOP_DIR)/tools/configure_helper.sh

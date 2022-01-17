@@ -1,5 +1,3 @@
-export PREFIX :=
-
 all:
 	$(MAKE_PATCH)
 	cd src; make; make install
