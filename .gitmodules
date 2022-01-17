@@ -10,3 +10,6 @@
 [submodule "third_party/cJSON/src"]
 	path = third_party/cJSON/src
 	url = https://github.com/DaveGamble/cJSON.git
+[submodule "third_party/libev/src"]
+	path = third_party/libev/src
+	url = https://github.com/enki/libev.git

@@ -4,6 +4,7 @@ CCFLAGS="-I$STAGING_INCLUDE -I$CONSTANT_INCLUDE"
 CLDFLAGS="-L$STAGING_LIB -L$CONSTANT_LIB"
 
 ./configure \
+    --prefix=/ \
     --libdir=/lib \
     --includedir=/include \
     --bindir=/bin \

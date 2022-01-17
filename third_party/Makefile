@@ -5,6 +5,7 @@ export prefix ?=
 export PREFIX ?=
 
 targets += libevent
+targets += libev
 targets += nlohmann
 targets += cJSON
 targets += mosquitto
