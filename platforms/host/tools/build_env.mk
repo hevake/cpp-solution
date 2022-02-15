@@ -1,7 +1,7 @@
-STAGING_INCLUDE := $(STAGING_DIR)/include
-STAGING_LIB := $(STAGING_DIR)/lib
+# 工具链的前缀
+# 如果 gcc 全名为 /opt/arm-linux/bin/arm-linux-gcc，那么 TOOLCHAIN_BIN_PREFIX := /opt/arm-linux/bin/arm-linux-
+TOOLCHAIN_BIN_PREFIX :=
 
-CCFLAGS := -I$(STAGING_INCLUDE)
-CFLAGS := $(CCFLAGS) -std=c99
-CXXFLAGS := $(CCFLAGS) -std=c++11
-LDFLAGS := -L$(STAGING_LIB)
+# 执行 ./configure 时的 --host 参数
+# 指定交叉编译环境中要指定所编译文件执行的目标平台
+CONFIGURE_HOST :=

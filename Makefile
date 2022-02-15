@@ -6,18 +6,12 @@ include tools/build_env.mk
 targets += third_party
 targets += apps
 
-.PHONY: all test clean distclean prepare $(appy_y)
+.PHONY: all test clean distclean $(targets)
 
 all: $(targets)
 	./tools/make_install.sh
 
-prepare:
-	mkdir -p $(STAGING_DIR) $(INSTALL_DIR)
-	cd $(STAGING_DIR) && mkdir -p include lib bin
-	cd $(INSTALL_DIR) && mkdir -p include lib bin
-	$(PLATFORM_DIR)/tools/pre_build.sh
-
-$(targets): prepare
+$(targets):
 	$(MAKE) -C $@
 
 test: $(targets)
@@ -26,13 +20,9 @@ test: $(targets)
 	done
 
 clean:
-	@for i in $(targets); do \
-		[ ! -d $$i ] || $(MAKE) -C $$i $@ || exit $$? ; \
-	done
-	rm -rf $(STAGING_DIR)
+	rm -rf $(OUTPUT_DIR)
+	make -C third_party clean
 
 distclean: clean
-	@for i in $(targets); do \
-		[ ! -d $$i ] || $(MAKE) -C $$i $@ || exit $$? ; \
-	done
-	rm -rf $(INSTALL_DIR); 
+	rm -rf $(INSTALL_DIR) $(STAGING_DIR)
+	make -C third_party distclean
