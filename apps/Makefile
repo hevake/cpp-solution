@@ -1,5 +1,6 @@
 apps += base event eventx util
 apps += network
+apps += terminal
 apps += main
 apps += sample
 
