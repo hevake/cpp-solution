@@ -8,10 +8,12 @@ export TOOLCHAIN_BIN_PREFIX ?=
 export CONFIGURE_HELPER ?= $(TOP_DIR)/tools/configure_helper.sh
 export MAKE_PATCH ?= $(TOP_DIR)/tools/make_patch.sh
 
+export COMMON_DIR   ?= $(TOP_DIR)/platforms/common
 export CONSTANT_DIR ?= $(PLATFORM_DIR)/constant_files
 export STAGING_DIR  ?= $(PLATFORM_DIR)/staging_files
 export INSTALL_DIR  ?= $(PLATFORM_DIR)/install_files
 
+export COMMON_INCLUDE   := $(COMMON_DIR)/include
 export STAGING_INCLUDE  := $(STAGING_DIR)/include
 export STAGING_LIB      := $(STAGING_DIR)/lib
 export CONSTANT_INCLUDE := $(CONSTANT_DIR)/include
@@ -19,7 +21,7 @@ export CONSTANT_LIB     := $(CONSTANT_DIR)/lib
 
 export OUTPUT_DIR := $(PLATFORM_DIR)/output_files
 
-COMPILE_FLAGS := -I$(STAGING_INCLUDE) -I$(CONSTANT_INCLUDE)
+COMPILE_FLAGS := -I$(STAGING_INCLUDE) -I$(CONSTANT_INCLUDE) -I$(COMMON_INCLUDE)
 LINK_FLAGS    := -L$(STAGING_LIB) -L$(CONSTANT_LIB)
 
 ifeq ($(RELEASE), 1)
