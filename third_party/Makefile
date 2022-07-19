@@ -4,11 +4,11 @@ export DESTDIR ?= $(STAGING_DIR)
 export prefix ?=
 export PREFIX ?=
 
-targets += libevent
-targets += libev
 targets += nlohmann
-targets += cJSON
-targets += mosquitto
+#targets += mosquitto
+#targets += libevent
+#targets += libev
+#targets += cJSON
 
 all test clean distclean:
 	@for i in $(targets); do \
