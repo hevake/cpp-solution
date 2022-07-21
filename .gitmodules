@@ -1,15 +1,16 @@
-[submodule "apps/cpp_tbox"]
-	path = apps/cpp_tbox
+[submodule "3rd-party/cpp-tbox"]
+	path = 3rd-party/cpp-tbox
 	url = git@gitee.com:cpp-master/cpp-tbox.git
-[submodule "third_party/libevent/src"]
-	path = third_party/libevent/src
+	branch = develop
+[submodule "3rd-party/libevent/src"]
+	path = 3rd-party/libevent/src
 	url = https://github.com/libevent/libevent.git
-[submodule "third_party/mosquitto/src"]
-	path = third_party/mosquitto/src
-	url = https://github.com/eclipse/mosquitto.git
-[submodule "third_party/cJSON/src"]
-	path = third_party/cJSON/src
-	url = https://github.com/DaveGamble/cJSON.git
-[submodule "third_party/libev/src"]
-	path = third_party/libev/src
+[submodule "3rd-party/libev/src"]
+	path = 3rd-party/libev/src
 	url = https://github.com/enki/libev.git
+[submodule "3rd-party/mosquitto/src"]
+	path = 3rd-party/mosquitto/src
+	url = https://github.com/eclipse/mosquitto.git
+[submodule "3rd-party/cJSON/src"]
+	path = 3rd-party/cJSON/src
+	url = https://github.com/DaveGamble/cJSON.git
