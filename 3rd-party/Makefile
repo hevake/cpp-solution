@@ -10,6 +10,15 @@ targets += nlohmann
 #targets += libev
 #targets += cJSON
 
+targets += cpp-tbox/base \
+		   cpp-tbox/event \
+		   cpp-tbox/eventx \
+		   cpp-tbox/util \
+		   cpp-tbox/log \
+		   cpp-tbox/network \
+		   cpp-tbox/terminal \
+		   cpp-tbox/main \
+
 all test clean distclean:
 	@for i in $(targets); do \
 		[ ! -d $$i ] || $(MAKE) -C $$i $@ || exit $$? ; \
