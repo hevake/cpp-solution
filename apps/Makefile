@@ -1,4 +1,5 @@
-apps += sample
+apps += hello-world
+apps += cpp-tbox-sample
 
 all test clean distclean:
 	@for i in $(apps); do \
