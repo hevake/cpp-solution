@@ -8,7 +8,7 @@ cpp-solution，是跨平台的C++应用项目模板。它让开发者在非常�
 
 # 怎么创建一个新的项目？
 
-请参考 apps/app\_demo 的实现方法。修改或复制它即可。
+请参考 apps/sample 的实现方法。修改或复制它即可。
 
 # 怎么跨平台？
 
@@ -21,6 +21,13 @@ cpp-solution，是跨平台的C++应用项目模板。它让开发者在非常�
    - 对 build\_env.mk 进行修改，主要修改 `TOOLCHAIN_BIN_PREFIX` 参数，用于指定 mips 的工具链。
      如果 mips 的工具链都在 somewhere/bin/ 目录下，具都以 mips-xxx- 开头。如 gcc 为 mips-xxx-gcc，那么 `TOOLCHAIN_BIN_PREFIX` 则应设置成 `somewhere/bin/mips-xxx-`
 4. 构建时，可使用命令 `make PLATFORM=misp` 进行构建。
+
+make 命令有以下参数：
+`make [PLATFORM=xxx] [RELEASE=1] [ENABLE_ASAN=1]`
+
+- PLATFORM=xxx，指定xxx交叉编译环境，默认为 host 本机；
+- RELEASE=1，构建发布版本，编译参数加 `-O2 -Os` 参数。否则构建调试版本，编译参数加 `-DDEBUG=1 -O0 -ggdb`，默认为调试版本
+- ENABLE\_ASAN=1，启用ASan进行运行时内存检测，默认不启用。
 
 # 未来规化
 

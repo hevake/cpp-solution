@@ -27,12 +27,15 @@ LINK_FLAGS    := -L$(STAGING_LIB) -L$(CONSTANT_LIB)
 ifeq ($(RELEASE), 1)
 COMPILE_FLAGS += -O2 -Os
 else
-COMPILE_FLAGS += -fsanitize=address -fno-omit-frame-pointer -DDEBUG=1 -O0 -ggdb
+COMPILE_FLAGS += -DDEBUG=1 -O0 -ggdb
+ifeq ($(ENABLE_ASAN), 1)
+COMPILE_FLAGS += -fsanitize=address -fno-omit-frame-pointer
 LINK_FLAGS    += -fsanitize=address -static-libasan
 endif
+endif
 
-export CFLAGS   := $(COMPILE_FLAGS) -std=c99
-export CXXFLAGS := $(COMPILE_FLAGS) -std=c++11
+export CFLAGS   := $(COMPILE_FLAGS)
+export CXXFLAGS := $(COMPILE_FLAGS)
 export LDFLAGS  := $(LINK_FLAGS)
 
 export AR := $(TOOLCHAIN_BIN_PREFIX)ar
