@@ -3,13 +3,16 @@ export TOP_DIR := $(PWD)
 include config.mk
 include tools/build_env.mk
 
-targets += third_party
+targets += 3rd-party
 targets += apps
 
-.PHONY: all test clean distclean $(targets)
+.PHONY: all test clean distclean prepare $(targets)
 
-all: $(targets)
+all: prepare $(targets)
 	./tools/make_install.sh
+
+prepare:
+	$(PLATFORM_DIR)/tools/prepare.sh
 
 $(targets):
 	$(MAKE) -C $@
@@ -21,8 +24,8 @@ test: $(targets)
 
 clean:
 	rm -rf $(OUTPUT_DIR)
-	make -C third_party clean
+	make -C 3rd-party clean
 
 distclean: clean
 	rm -rf $(INSTALL_DIR) $(STAGING_DIR)
-	make -C third_party distclean
+	make -C 3rd-party distclean

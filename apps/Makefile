@@ -1,8 +1,5 @@
-apps += base event eventx util
-apps += network
-apps += terminal
-apps += main
-apps += sample
+apps += hello-world
+apps += cpp-tbox-sample
 
 all test clean distclean:
 	@for i in $(apps); do \
