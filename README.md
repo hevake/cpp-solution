@@ -8,7 +8,7 @@ cpp-solution，是跨平台的C++应用项目模板。它让开发者在非常�
 
 # 怎么创建一个新的项目？
 
-如果是基于 cpp-tbox 的 main 框架开发，请参考 apps/cpp-tbox-sample 的实现方法。修改或复制它即可。 
+如果是基于 cpp-tbox 的 main 框架开发，请参考 apps/cpp-tbox-sample 的实现方法。修改或复制它即可。  
 如果仅仅是一个简单的程序，请参考 apps/hello-world。
 
 # 怎么跨平台？
