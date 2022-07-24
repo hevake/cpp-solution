@@ -14,11 +14,16 @@ git submodule init;
 git submodule update;
 make
 ```
+构建完成后，输出的文件均在 platforms/host/ 目录下
+
+- install\_files/，可执行文件、动态库文件、配置文件
+- staging\_files/，库文件、头文件
+- output\_files/，编译产出的中间文件，如目标文件
 
 # 怎么创建一个新的项目？
 
-如果是基于 cpp-tbox 的 main 框架开发，请参考 apps/cpp-tbox-sample 的实现方法。修改或复制它即可。  
-如果仅仅是一个简单的程序，请参考 apps/hello-world。
+如果仅仅是一个简单的可执行程序，请参考 apps/hello-world。  
+如果是基于 cpp-tbox 的 main 框架开发，请参考 apps/cpp-tbox-sample 的实现方法。
 
 # 怎么跨平台？
 
