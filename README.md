@@ -6,6 +6,15 @@ cpp-solution，是跨平台的C++应用项目模板。它让开发者在非常�
 当我们开发人员需要开发一个新的项目的时候需要搭建项目环境。搭建项目环境的时候，通过会涉及到交叉编译、引入第三方等繁琐的操作。
 有了本项目，开发者就可以直接 clone 本仓库。以本仓库为模块进行修改，就可以快速搭建起新的项目环境了。
 
+# 快速上手
+```
+git clone git@gitee.com:cpp-master/cpp-solution.git -b develop
+cd cpp-solution;
+git submodule init;
+git submodule update;
+make
+```
+
 # 怎么创建一个新的项目？
 
 如果是基于 cpp-tbox 的 main 框架开发，请参考 apps/cpp-tbox-sample 的实现方法。修改或复制它即可。  
