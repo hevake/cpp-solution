@@ -1,0 +1,17 @@
+diff --git a/Makefile b/Makefile
+index f3164a1e..40387003 100644
+--- a/Makefile
++++ b/Makefile
+@@ -87,6 +87,12 @@ ptest : mosquitto
+ utest : mosquitto
+ 	$(MAKE) -C test utest
+ 
++build_lib :
++	$(MAKE) -C lib
++
++install_lib: build_lib
++	$(MAKE) -C lib install
++
+ install : all
+ 	set -e; for d in ${DIRS}; do $(MAKE) -C $${d} install; done
+ ifeq ($(WITH_DOCS),yes)

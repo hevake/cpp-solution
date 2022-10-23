@@ -2,15 +2,7 @@
 	path = 3rd-party/cpp-tbox
 	url = git@gitee.com:cpp-master/cpp-tbox.git
 	branch = develop
-[submodule "3rd-party/libevent/src"]
-	path = 3rd-party/libevent/src
-	url = https://github.com/libevent/libevent.git
-[submodule "3rd-party/libev/src"]
-	path = 3rd-party/libev/src
-	url = https://github.com/enki/libev.git
 [submodule "3rd-party/mosquitto/src"]
 	path = 3rd-party/mosquitto/src
 	url = https://github.com/eclipse/mosquitto.git
-[submodule "3rd-party/cJSON/src"]
-	path = 3rd-party/cJSON/src
-	url = https://github.com/DaveGamble/cJSON.git
+  branch = v2.0.15

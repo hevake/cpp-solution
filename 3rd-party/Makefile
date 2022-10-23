@@ -5,10 +5,7 @@ export prefix ?=
 export PREFIX ?=
 
 targets += nlohmann
-#targets += cJSON
-#targets += mosquitto
-#targets += libevent
-#targets += libev
+targets += mosquitto
 
 targets += cpp-tbox/modules/base \
 		   cpp-tbox/modules/event \
