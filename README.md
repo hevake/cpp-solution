@@ -6,10 +6,24 @@ cpp-solution，是跨平台的C++应用项目模板。它让开发者在非常�
 当我们开发人员需要开发一个新的项目的时候需要搭建项目环境。搭建项目环境的时候，通过会涉及到交叉编译、引入第三方等繁琐的操作。
 有了本项目，开发者就可以直接 clone 本仓库。以本仓库为模块进行修改，就可以快速搭建起新的项目环境了。
 
+# 快速上手
+```
+git clone git@gitee.com:cpp-master/cpp-solution.git -b develop
+cd cpp-solution;
+git submodule init;
+git submodule update;
+make
+```
+构建完成后，输出的文件均在 platforms/host/ 目录下
+
+- install\_files/，可执行文件、动态库文件、配置文件
+- staging\_files/，库文件、头文件
+- output\_files/，编译产出的中间文件，如目标文件
+
 # 怎么创建一个新的项目？
 
-如果是基于 cpp-tbox 的 main 框架开发，请参考 apps/cpp-tbox-sample 的实现方法。修改或复制它即可。  
-如果仅仅是一个简单的程序，请参考 apps/hello-world。
+如果仅仅是一个简单的可执行程序，请参考 apps/hello-world。  
+如果是基于 cpp-tbox 的 main 框架开发，请参考 apps/cpp-tbox-sample 的实现方法。
 
 # 怎么跨平台？
 
@@ -32,4 +46,5 @@ make 命令有以下参数：
 
 # 未来规化
 
-- 将third\_party编译的目标文件与与源码文件分离开
+- 将3rd-party编译的目标文件与与源码文件分离开
+- 自动生成头文件依赖关系

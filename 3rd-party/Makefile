@@ -5,19 +5,16 @@ export prefix ?=
 export PREFIX ?=
 
 targets += nlohmann
-#targets += cJSON
-#targets += mosquitto
-#targets += libevent
-#targets += libev
+targets += mosquitto
 
-targets += cpp-tbox/base \
-		   cpp-tbox/event \
-		   cpp-tbox/eventx \
-		   cpp-tbox/util \
-		   cpp-tbox/log \
-		   cpp-tbox/network \
-		   cpp-tbox/terminal \
-		   cpp-tbox/main \
+targets += cpp-tbox/modules/base \
+		   cpp-tbox/modules/event \
+		   cpp-tbox/modules/eventx \
+		   cpp-tbox/modules/util \
+		   cpp-tbox/modules/log \
+		   cpp-tbox/modules/network \
+		   cpp-tbox/modules/terminal \
+		   cpp-tbox/modules/main \
 
 all test clean distclean:
 	@for i in $(targets); do \
